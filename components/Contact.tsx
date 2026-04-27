@@ -1,7 +1,8 @@
-import { Mail, Phone, MapPin, ArrowRight, Send } from "lucide-react";
+import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "./BrandIcons";
 import { profile, interests } from "@/lib/content";
 import { SectionHeader } from "./SectionHeader";
+import { ContactForm } from "./ContactForm";
 
 export function Contact() {
   return (
@@ -98,51 +99,7 @@ export function Contact() {
             </div>
           </div>
 
-          <form
-            action={`mailto:${profile.email}`}
-            method="post"
-            encType="text/plain"
-            className="glass rounded-2xl p-6 space-y-4 self-start"
-          >
-            <div>
-              <label htmlFor="name" className="sr-only">Name</label>
-              <input
-                id="name"
-                name="name"
-                required
-                placeholder="Your Name"
-                className="w-full px-4 h-12 rounded-xl bg-muted/40 border border-border/60 focus:border-accent/60 focus:outline-none transition-colors placeholder:text-muted-foreground"
-              />
-            </div>
-            <div>
-              <label htmlFor="email" className="sr-only">Email</label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                required
-                placeholder="Your Email"
-                className="w-full px-4 h-12 rounded-xl bg-muted/40 border border-border/60 focus:border-accent/60 focus:outline-none transition-colors placeholder:text-muted-foreground"
-              />
-            </div>
-            <div>
-              <label htmlFor="message" className="sr-only">Message</label>
-              <textarea
-                id="message"
-                name="message"
-                required
-                rows={6}
-                placeholder="Your Message"
-                className="w-full px-4 py-3 rounded-xl bg-muted/40 border border-border/60 focus:border-accent/60 focus:outline-none transition-colors placeholder:text-muted-foreground resize-none"
-              />
-            </div>
-            <button
-              type="submit"
-              className="w-full inline-flex items-center justify-center gap-2 h-12 rounded-xl bg-gradient-to-r from-violet-500 to-blue-500 text-white font-medium hover:shadow-lg hover:shadow-violet-500/30 transition-shadow"
-            >
-              <Send size={16} /> Send Message
-            </button>
-          </form>
+          <ContactForm />
         </div>
       </div>
 
