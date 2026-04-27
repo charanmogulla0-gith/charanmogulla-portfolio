@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   title: "Charan Mogulla — AI Engineer",
   description:
     "AI Engineer building scalable LLM, RAG, and multi-agent systems. 5+ years shipping production AI on Azure, AWS, and GCP.",
-  metadataBase: new URL("https://charanmogulla.vercel.app"),
+  metadataBase: new URL("https://charanmogulla-portfolio.vercel.app"),
   openGraph: {
     title: "Charan Mogulla — AI Engineer",
     description:
