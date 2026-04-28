@@ -6,7 +6,7 @@ export const profile = {
   location: "Kansas City, KS",
   email: "charanmogulla0@gmail.com",
   phone: "+1 (913) 488-0588",
-  linkedin: "https://www.linkedin.com/in/charanmogulla",
+  linkedin: "https://www.linkedin.com/in/charan-mogulla-808343175/",
   github: "https://github.com/charanmogulla0-gith",
   resumeUrl: "/resume.pdf",
 };
