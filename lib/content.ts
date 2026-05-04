@@ -1,7 +1,7 @@
 export const profile = {
   name: "Charan Mogulla",
   title: "AI Engineer",
-  tagline: "Building scalable AI systems that deliver real business impact",
+  tagline: "Retrieval systems, fine-tuned open-source LLMs, and the boring infra that ships them.",
   initials: "CM",
   location: "Kansas City, KS",
   email: "charanmogulla0@gmail.com",
@@ -12,44 +12,43 @@ export const profile = {
 };
 
 export const stats = [
-  { value: "5+", label: "Years Experience" },
-  { value: "40%", label: "Accuracy Improvement" },
-  { value: "11+", label: "LLM Production Systems" },
+  { value: "3+", label: "Years in Production ML" },
+  { value: "40%", label: "Inference Cost Reduction" },
+  { value: "<2s", label: "Median RAG Response" },
 ];
 
 export const about = {
   heading: "Who I Am",
   paragraph:
-    "AI Engineer with 5+ years of experience building scalable data and AI systems, including 3+ years specializing in production-grade LLM applications and Generative AI solutions. Experienced in developing end-to-end AI pipelines including document ingestion, embeddings, vector search, and LLM orchestration using LangChain and Azure OpenAI.",
+    "AI Engineer with about 3 years of ML experience, including roughly 2 years working on LLM applications. Most of that recent work has been retrieval systems, fine-tuning open-source models with LoRA and QLoRA, and shipping the resulting services on Azure. Earlier background is in Kafka and Spark data pipelines feeding downstream ML.",
   bullets: [
-    "Expertise in designing RAG architectures, multi-agent workflows, and LLM fine-tuning (LoRA/QLoRA/PEFT).",
-    "Proven ability to deploy containerized AI microservices on Azure using Docker, Kubernetes, and CI/CD pipelines.",
-    "Focused on improving response accuracy, reducing hallucinations, and enabling scalable AI-driven automation.",
+    "Designed RAG document Q&A on LangChain + OpenAI embeddings + FAISS with a FastAPI backend; median response time on production traffic sits a little under 2 seconds.",
+    "Fine-tuned Mistral 7B and LLaMA-2 with LoRA/QLoRA and moved the high-volume path off GPT-4 onto the tuned models — ~40% lower per-query inference cost at comparable quality on the eval set.",
+    "Built evaluation harnesses (automated prompt benchmarks plus a small reviewer queue) so prompt and model changes have to pass before they go out.",
   ],
 };
 
 export const capabilities = [
-  { icon: "Brain", title: "LLM & GenAI", desc: "RAG, fine-tuning, agents" },
-  { icon: "Cog", title: "MLOps", desc: "Docker, K8s, CI/CD" },
-  { icon: "Cloud", title: "Cloud", desc: "Azure, AWS, GCP" },
-  { icon: "Database", title: "Data Eng", desc: "Kafka, Spark, ETL" },
+  { icon: "Brain", title: "LLM & RAG", desc: "LangChain, embeddings, FAISS" },
+  { icon: "Cog", title: "Fine-Tuning", desc: "LoRA, QLoRA, Mistral, LLaMA-2" },
+  { icon: "Cloud", title: "Azure", desc: "ML, OpenAI, AKS, Functions" },
+  { icon: "Database", title: "Streaming", desc: "Kafka, Spark Streaming, ETL" },
 ];
 
 export const skillGroups = [
   {
     icon: "Brain",
-    title: "AI & LLM Engineering",
+    title: "LLM & GenAI",
     color: "violet",
     skills: [
-      "LLM Applications",
-      "RAG Architectures",
+      "RAG",
       "Prompt Engineering",
-      "LangChain / LlamaIndex",
-      "LLM Fine-tuning (LoRA/QLoRA/PEFT)",
-      "Agentic AI Systems",
+      "LoRA",
+      "QLoRA",
+      "LangChain",
+      "OpenAI",
       "Azure OpenAI",
-      "Embeddings & Semantic Search",
-      "Generative AI",
+      "Embeddings",
     ],
   },
   {
@@ -58,41 +57,15 @@ export const skillGroups = [
     color: "sky",
     skills: [
       "PyTorch",
-      "Transformers",
-      "HuggingFace",
-      "NLP",
-      "Fine-Tuning",
-      "Model Training & Evaluation",
-      "Deep Learning",
-      "Machine Learning",
+      "Hugging Face Transformers",
+      "scikit-learn",
     ],
   },
   {
     icon: "Database",
-    title: "Vector DBs & Search",
+    title: "Vector Search",
     color: "teal",
-    skills: [
-      "FAISS",
-      "Vector Databases",
-      "Embedding-Based Retrieval",
-      "Azure Cognitive Search",
-      "Semantic Search",
-      "Qdrant",
-    ],
-  },
-  {
-    icon: "Cloud",
-    title: "Cloud Platforms",
-    color: "blue",
-    skills: [
-      "Microsoft Azure",
-      "Azure ML",
-      "Azure OpenAI Service",
-      "Azure Kubernetes Service (AKS)",
-      "Azure App Services",
-      "AWS",
-      "Databricks",
-    ],
+    skills: ["FAISS", "Azure AI Search"],
   },
   {
     icon: "GitBranch",
@@ -102,26 +75,37 @@ export const skillGroups = [
       "Apache Kafka",
       "Apache Spark",
       "Spark Streaming",
-      "ETL Pipelines",
       "SQL",
-      "Large-Scale Data Processing",
+      "ETL",
     ],
   },
   {
     icon: "Wrench",
-    title: "MLOps & Backend",
+    title: "MLOps",
     color: "emerald",
     skills: [
       "Docker",
-      "Kubernetes",
-      "CI/CD Pipelines",
+      "Kubernetes (AKS)",
+      "Azure DevOps",
+      "Azure Monitor",
+      "MLflow",
+    ],
+  },
+  {
+    icon: "Cloud",
+    title: "Cloud & Backend",
+    color: "blue",
+    skills: [
+      "Azure ML",
+      "Azure OpenAI",
+      "Azure Functions",
+      "Azure App Services",
+      "AKS",
       "FastAPI",
       "Flask",
       "REST APIs",
       "Python",
-      "C++",
-      "Git",
-      "Model Deployment",
+      "SQL",
     ],
   },
 ];
@@ -129,32 +113,31 @@ export const skillGroups = [
 export const experience = [
   {
     role: "AI Engineer",
-    company: "Staffingtree Inc",
+    company: "Staffingtree Inc.",
     location: "Overland Park, KS",
     period: "Aug 2023 — Present",
     summary:
-      "Architecting and productionizing enterprise-grade LLM applications with LangChain, RAG, and multi-agent systems.",
+      "Production RAG systems, LoRA/QLoRA fine-tuning, and multi-agent orchestration with LangChain on Azure.",
     bullets: [
-      "Architected and productionized enterprise-grade LLM applications using LangChain and OpenAI, serving real-time customer workflows with scalable API infrastructure and robust monitoring.",
-      "Designed and implemented end-to-end enterprise RAG architecture including document ingestion, chunking, embedding generation, vector indexing, and LLM retrieval pipelines, improving contextual response accuracy by 40% and significantly reducing hallucinations in production systems.",
-      "Built multi-agent orchestration systems to automate complex customer operations, translating business logic into reliable AI-driven workflows.",
-      "Implemented LoRA and QLoRA fine-tuning pipelines for domain adaptation, improving task-specific performance while optimizing GPU utilization and inference cost.",
-      "Established automated evaluation pipelines including prompt benchmarking and human-in-the-loop validation to continuously improve LLM response quality.",
-      "Containerized AI services with Docker and deployed them through CI/CD pipelines, enabling reproducible and scalable production deployments.",
+      "Built a RAG document Q&A system with LangChain, OpenAI embeddings, and FAISS behind a FastAPI backend. Median response time on production traffic sits a little under 2 seconds for typical queries.",
+      "Wrote the ingestion and chunking pipeline for PDF, HTML, and Markdown sources. Tuned chunk size and overlap by running retrieval evals against a labeled question set — the shipped version had roughly 30% fewer retrieval misses than the first pass.",
+      "Fine-tuned Mistral 7B and LLaMA-2 with LoRA and QLoRA on a domain Q&A dataset, then moved the high-volume path off GPT-4 onto the tuned models. Per-query inference cost dropped by around 40% with comparable answer quality on our eval set.",
+      "Set up an evaluation harness with automated prompt benchmarks plus a small reviewer queue. Prompt and model changes have to pass it before they can go out.",
+      "Added a multi-document agent flow with LangChain tools and Azure Functions for queries that need to pull from more than one source in a single response.",
     ],
   },
   {
-    role: "AI Engineer",
+    role: "Systems Engineer (ML Engineer track)",
     company: "Infosys",
     location: "Hyderabad, India",
     period: "Jul 2022 — Jul 2023",
     summary:
-      "Architected LLM-powered conversational AI systems on Microsoft Azure serving 100K+ users.",
+      "Azure AI Search prototypes, Azure ML pipelines, and call-center retrieval workflows.",
     bullets: [
-      "Built Azure OpenAI–powered conversational AI assistants integrated with enterprise knowledge bases, serving 100K+ end users.",
-      "Designed semantic search pipelines using Azure Cognitive Search and embedding models, raising answer relevance and reducing escalations.",
-      "Productionized models on Azure Kubernetes Service (AKS) with autoscaling, blue/green deploys, and observability via App Insights.",
-      "Partnered with product and platform teams to define safety guardrails, prompt patterns, and evaluation rubrics.",
+      "Prototyped a knowledge assistant on Azure AI Search using vector retrieval; moved from internal prototype to pilot before role end.",
+      "Built Azure ML pipelines for ingestion, training, eval tracking, and deployment. Release cycles for new model versions went from about three weeks down to roughly one.",
+      "Packaged FastAPI microservices in Docker on AKS through Azure DevOps. Versioning was set up so a rollback was one command instead of a redeploy.",
+      "Hooked retrieval-based answer suggestions into the call-center workflow for a few intents and saw measurable handle-time reduction on the tracked subset.",
     ],
   },
   {
@@ -163,12 +146,11 @@ export const experience = [
     location: "Hyderabad, India",
     period: "Dec 2020 — Jun 2022",
     summary:
-      "Built scalable data pipelines and real-time streaming systems for enterprise AI model consumption.",
+      "Real-time Kafka + Spark Streaming pipelines feeding downstream fraud detection and analytics.",
     bullets: [
-      "Built Kafka + Spark Streaming pipelines processing high-throughput event streams feeding downstream ML inference services.",
-      "Designed ETL workflows on Databricks for petabyte-scale data lakes; implemented incremental processing and partition pruning for cost efficiency.",
-      "Authored SQL transforms and dbt-style models powering BI and feature stores used by data science teams.",
-      "Hardened pipelines with schema evolution checks, alerting, and lineage so downstream AI/ML systems received clean, trusted data.",
+      "Built and maintained Kafka and Spark Streaming pipelines for real-time logistics and transaction events that fed downstream fraud detection and analytics.",
+      "Cut fraud detection latency from a few minutes down to under 30 seconds by reworking the ingestion path and tuning Spark Streaming micro-batch intervals.",
+      "Wrote Spark SQL ETL jobs with schema validation, deduplication, and quality checks. Cut down on downstream pipeline failures caused by upstream schema drift.",
     ],
   },
 ];
@@ -177,43 +159,27 @@ export const projects = [
   {
     title: "Checkmate — AI Code Review GitHub App",
     blurb:
-      "Production GitHub App that reviews PRs with Claude Sonnet 4.6, posts inline comments, uses RAG over the repo, and is fully evaluated + observable.",
-    tags: ["FastAPI", "Claude API", "RAG", "Qdrant", "Langfuse", "Fly.io"],
+      "Reviews pull requests with Claude and posts inline comments scoped to the changed diff lines. Indexes the target repo on first use into Qdrant with BGE-small embeddings so the reviewer sees function-level context, not just the diff. Langfuse traces every call (tokens, latency, cost), and a promptfoo suite of 14 test cases has to pass before any prompt change ships.",
+    tags: ["FastAPI", "Claude API", "RAG", "Qdrant", "Langfuse", "promptfoo", "Fly.io"],
     badge: "Live",
     liveUrl: "https://checkmate-ai.fly.dev",
     repoUrl: "https://github.com/charanmogulla0-gith/checkmateai",
     accent: "violet",
   },
   {
-    title: "AI-Powered Chatbot with LangChain & RAG",
+    title: "Domain-Specific LLM Fine-Tuning",
     blurb:
-      "End-to-end RAG pipeline powering a context-aware enterprise chatbot for large document repositories.",
-    tags: ["LangChain", "FAISS", "OpenAI", "Vector Embeddings"],
-    badge: "LangChain · RAG",
-    accent: "sky",
-  },
-  {
-    title: "LLM Fine-Tuning for Domain-Specific Chatbot",
-    blurb:
-      "Fine-tuned open-source LLMs for enterprise AI assistants with domain-specific knowledge.",
-    tags: ["Mistral", "LoRA", "GPT-J", "NVIDIA"],
-    badge: "Model Optimization",
+      "Fine-tuned Mistral 7B with QLoRA on a curated instruction dataset I assembled (~8K pairs). Compared the tuned model against the base model on a held-out eval set, tracking exact-match plus a small human-rated quality score. Code and write-up on GitHub.",
+    tags: ["Mistral 7B", "QLoRA", "PEFT", "Hugging Face", "Evaluation"],
+    badge: "Fine-Tuning",
     accent: "emerald",
-  },
-  {
-    title: "AI-Powered Search Engine with LLM Summarization",
-    blurb:
-      "Intelligent search engine with AI-generated concise summaries using GPT-4 and T5.",
-    tags: ["GPT-4", "T5", "LangChain", "Embeddings"],
-    badge: "LLM Summarization",
-    accent: "amber",
   },
 ];
 
 export const education = [
   {
     degree: "Master of Science",
-    field: "Computer Science in AI & ML",
+    field: "Computer Science (AI & ML)",
     school: "University of Central Missouri",
     location: "Lee's Summit, Missouri",
     period: "Aug 2023 — May 2025",
@@ -221,8 +187,8 @@ export const education = [
     coursework: ["AI Ethics", "Machine Learning", "NLP", "Deep Learning", "Data Analytics"],
   },
   {
-    degree: "Bachelor of Science",
-    field: "Computer Science, Engineering",
+    degree: "Bachelor of Technology",
+    field: "Computer Science",
     school: "Bharat Institute of Engineering and Technology",
     location: "Hyderabad, India",
     period: "Jun 2017 — Jul 2021",
@@ -232,16 +198,16 @@ export const education = [
 ];
 
 export const certifications = [
-  { title: "LangChain for Developers", issuer: "LangChain Official", year: "2024" },
-  { title: "Generative AI with Large Language Models", issuer: "Coursera", year: "2024" },
-  { title: "Deep Learning Specialization", issuer: "Andrew Ng", year: "2023" },
+  { title: "Generative AI with LLMs", issuer: "DeepLearning.AI", year: "2024" },
+  { title: "LangChain for LLM Application Development", issuer: "DeepLearning.AI", year: "2024" },
+  { title: "Deep Learning Specialization", issuer: "DeepLearning.AI", year: "2023" },
 ];
 
 export const interests = [
   "AI Engineering roles",
   "LLM & RAG projects",
+  "Fine-tuning & evaluation work",
   "Consulting & collaboration",
-  "Multi-agent AI systems",
 ];
 
 export const navLinks = [

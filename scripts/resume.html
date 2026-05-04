@@ -87,18 +87,6 @@
       .skills strong {
         display: inline-block;
       }
-      .badge {
-        display: inline-block;
-        font-size: 8.5pt;
-        padding: 0 4pt;
-        border: 0.6pt solid #15803d;
-        color: #15803d;
-        border-radius: 2pt;
-        margin-left: 4pt;
-        vertical-align: 2px;
-        font-style: normal;
-        font-weight: 600;
-      }
       a {
         color: #0066cc;
         text-decoration: none;
@@ -110,7 +98,7 @@
       <header class="head">
         <h1>Charan Mogulla</h1>
         <div class="meta">
-          Kansas City, KS &nbsp;|&nbsp; +1 (913) 488-0588 &nbsp;|&nbsp;
+          Kansas City, KS &nbsp;|&nbsp; (913) 488-0588 &nbsp;|&nbsp;
           <a href="mailto:charanmogulla0@gmail.com">charanmogulla0@gmail.com</a>
           &nbsp;|&nbsp;
           <a href="https://www.linkedin.com/in/charan-mogulla-808343175/">LinkedIn</a>
@@ -123,19 +111,50 @@
 
       <h2 class="section">Summary</h2>
       <p style="margin: 2pt 0 0">
-        AI Engineer specializing in production-grade LLM applications, RAG
-        architectures, and scalable AI systems. Experienced in designing
-        multi-agent workflows, fine-tuning large language models (LoRA/QLoRA),
-        and deploying containerized AI services on Azure with robust MLOps
-        practices. Proven track record of improving response accuracy by 40%
-        and reducing enterprise document review time by 50% through end-to-end
-        AI solution delivery.
+        AI Engineer with about 3 years of ML experience, including roughly 2
+        years working on LLM applications. Most of that recent work has been
+        retrieval systems, fine-tuning open-source models with LoRA and QLoRA,
+        and shipping the resulting services on Azure. Earlier background is in
+        Kafka and Spark data pipelines.
       </p>
 
-      <h2 class="section">Professional Experience</h2>
+      <h2 class="section">Skills</h2>
+      <ul class="bullets skills">
+        <li>
+          <strong>LLM and GenAI:</strong> RAG, prompt engineering, LoRA, QLoRA,
+          LangChain, OpenAI, Azure OpenAI, embeddings
+        </li>
+        <li>
+          <strong>ML and Deep Learning:</strong> PyTorch, Hugging Face
+          Transformers, scikit-learn
+        </li>
+        <li>
+          <strong>Vector search:</strong> FAISS, Azure AI Search
+        </li>
+        <li>
+          <strong>Data and streaming:</strong> Apache Kafka, Apache Spark, Spark
+          Streaming, SQL, ETL
+        </li>
+        <li>
+          <strong>MLOps:</strong> Docker, Kubernetes (AKS), Azure DevOps, Azure
+          Monitor, MLflow
+        </li>
+        <li>
+          <strong>Cloud:</strong> Azure (ML, OpenAI, Functions, App Services,
+          AKS)
+        </li>
+        <li>
+          <strong>Backend:</strong> FastAPI, Flask, REST APIs
+        </li>
+        <li>
+          <strong>Languages:</strong> Python, SQL
+        </li>
+      </ul>
+
+      <h2 class="section">Experience</h2>
 
       <div class="role-row">
-        <span class="left">Staffingtree Inc</span>
+        <span class="left">Staffingtree Inc.</span>
         <span class="right">Aug 2023 — Present</span>
       </div>
       <div class="sub-row">
@@ -143,31 +162,31 @@
       </div>
       <ul class="bullets">
         <li>
-          Architected and productionized enterprise-grade LLM applications
-          using LangChain and OpenAI, serving real-time customer workflows
-          with scalable API infrastructure and robust monitoring.
+          Built a RAG document Q&amp;A system using LangChain, OpenAI
+          embeddings, and FAISS, with a FastAPI backend. Median response time on
+          production traffic sits a little under 2 seconds for typical queries.
         </li>
         <li>
-          Designed advanced RAG pipelines with vector databases and embedding
-          optimization, improving contextual response accuracy by 40% while
-          reducing hallucinations.
+          Wrote the ingestion and chunking pipeline for PDF, HTML, and Markdown
+          sources. Tuned chunk size and overlap by running retrieval evals
+          against a labeled question set — the shipped version had roughly 30%
+          fewer retrieval misses than the first pass.
         </li>
         <li>
-          Built multi-agent orchestration systems to automate complex customer
-          operations, translating business logic into reliable AI-driven
-          workflows.
+          Fine-tuned Mistral 7B and LLaMA-2 with LoRA and QLoRA on a domain
+          Q&amp;A dataset, then moved the high-volume path off GPT-4 onto the
+          tuned models. Per-query inference cost dropped by around 40% with
+          comparable answer quality on our eval set.
         </li>
         <li>
-          Implemented LoRA and QLoRA fine-tuning pipelines for domain
-          adaptation, improving task-specific performance while optimizing GPU
-          utilization and inference cost.
+          Set up an evaluation harness with automated prompt benchmarks plus a
+          small reviewer queue. Prompt and model changes have to pass it before
+          they can go out.
         </li>
         <li>
-          Established evaluation and feedback loops (automated testing, prompt
-          benchmarking, human-in-the-loop validation) to continuously improve
-          response quality. Containerized AI services with Docker and deployed
-          via CI/CD pipelines to ensure reproducible, scalable, secure
-          production rollouts.
+          Added a multi-document agent flow with LangChain tools and Azure
+          Functions for queries that need to pull from more than one source in a
+          single response.
         </li>
       </ul>
 
@@ -176,37 +195,28 @@
         <span class="right">Jul 2022 — Jul 2023</span>
       </div>
       <div class="sub-row">
-        <span>AI Engineer</span><span>Hyderabad, India</span>
+        <span>Systems Engineer (ML Engineer track)</span>
+        <span>Hyderabad, India</span>
       </div>
       <ul class="bullets">
         <li>
-          Architected and deployed LLM-powered conversational AI systems on
-          Microsoft Azure, leveraging Azure OpenAI Service, Azure Machine
-          Learning, and Azure App Services, enabling intelligent automation
-          for enterprise customer engagement platforms serving 100K+ users.
+          Prototyped a knowledge assistant on Azure AI Search using vector
+          retrieval; moved from internal prototype to pilot before role end.
         </li>
         <li>
-          Designed and implemented RAG-based enterprise knowledge assistants
-          using LangChain and Azure Cognitive Search (vector search),
-          improving contextual accuracy by 35% and significantly reducing
-          hallucinations in production.
+          Built Azure ML pipelines for ingestion, training, eval tracking, and
+          deployment. Release cycles for new model versions went from about
+          three weeks down to roughly one.
         </li>
         <li>
-          Built scalable AI pipelines using Azure ML, handling data ingestion,
-          embedding generation, model experimentation, evaluation tracking,
-          and secure model deployment.
+          Packaged FastAPI microservices in Docker on AKS through Azure DevOps.
+          Versioning was set up so a rollback was one command instead of a
+          redeploy.
         </li>
         <li>
-          Integrated Azure OpenAI + LangChain orchestration workflows to
-          automate call center query resolution, reducing average resolution
-          time by 30% and lowering operational costs.
-        </li>
-        <li>
-          Built and deployed containerized AI microservices using FastAPI and
-          Docker on Azure Kubernetes Service (AKS), implementing Azure DevOps
-          CI/CD, model versioning, monitoring, prompt evaluation frameworks,
-          and automated retraining to ensure scalable, secure, and
-          production-grade AI systems.
+          Hooked retrieval-based answer suggestions into the call-center
+          workflow for a few intents and saw measurable handle-time reduction on
+          the tracked subset.
         </li>
       </ul>
 
@@ -219,136 +229,49 @@
       </div>
       <ul class="bullets">
         <li>
-          Architected and maintained scalable data pipelines processing
-          large-scale enterprise logistics and transaction datasets, enabling
-          downstream analytics and AI model consumption.
+          Built and maintained Kafka and Spark Streaming pipelines for real-time
+          logistics and transaction events that fed downstream fraud detection
+          and analytics.
         </li>
         <li>
-          Designed distributed real-time streaming systems using Apache Kafka
-          and Spark Streaming for fraud detection, improving detection
-          accuracy and reducing response latency by 25%.
+          Cut fraud detection latency from a few minutes down to under 30
+          seconds by reworking the ingestion path and tuning Spark Streaming
+          micro-batch intervals.
         </li>
         <li>
-          Built robust ETL workflows for structured and unstructured data,
-          implementing data validation, schema enforcement, and performance
-          optimization to ensure high data reliability.
-        </li>
-        <li>
-          Developed LLM-driven document summarization pipelines for enterprise
-          logistics reports, reducing manual review time by 50% and
-          accelerating operational decision-making.
-        </li>
-        <li>
-          Automated large-scale data preprocessing and feature engineering
-          pipelines for ML models, containerized workflows with Docker, and
-          partnered with ML/DevOps teams to productionize scalable, monitored,
-          and governance-compliant data systems — improving inference speed
-          by 25% and ensuring high availability.
+          Wrote Spark SQL ETL jobs with schema validation, deduplication, and
+          quality checks. Cut down on downstream pipeline failures caused by
+          upstream schema drift.
         </li>
       </ul>
 
-      <h2 class="section">Technical Skills</h2>
-      <ul class="bullets skills">
-        <li>
-          <strong>AI &amp; LLM Systems:</strong> LangChain, Azure OpenAI, RAG,
-          Vector Databases (FAISS, Qdrant), LoRA, QLoRA, Prompt Engineering,
-          Multi-Agent Systems, Anthropic Claude API, Langfuse
-        </li>
-        <li>
-          <strong>Machine Learning:</strong> PyTorch, Deep Learning, NLP,
-          Computer Vision, Model Evaluation, Fine-Tuning, HuggingFace
-          Transformers
-        </li>
-        <li>
-          <strong>Data &amp; Distributed Systems:</strong> Apache Kafka,
-          Spark Streaming, ETL Pipelines, SQL, Large-Scale Data Processing,
-          Databricks
-        </li>
-        <li>
-          <strong>Cloud &amp; DevOps:</strong> Microsoft Azure, AWS, Azure ML,
-          AKS, Docker, Kubernetes, CI/CD, MLOps, Monitoring &amp;
-          Observability, Fly.io, Terraform
-        </li>
-        <li>
-          <strong>Programming:</strong> Python, C++, FastAPI, Flask,
-          TypeScript, Next.js
-        </li>
-      </ul>
-
-      <h2 class="section">AI &amp; LLM Projects</h2>
+      <h2 class="section">Projects</h2>
 
       <div class="project">
-        <div class="name">
-          Checkmate — AI Code Review GitHub App
-          <span class="badge">Live</span>
-          <span style="font-style: italic; font-weight: 400">
-            ·
-            <a href="https://checkmate-ai.fly.dev">checkmate-ai.fly.dev</a>
-            ·
+        <div class="name">Checkmate — AI Code Review GitHub App</div>
+        <ul class="bullets">
+          <li>
+            Reviews pull requests with Claude and posts inline comments scoped
+            to the changed diff lines. Indexes the target repo on first use into
+            Qdrant with BGE-small embeddings so the reviewer sees function-level
+            context, not just the diff. Langfuse traces every call (tokens,
+            latency, cost), and a promptfoo suite of 14 test cases has to pass
+            before any prompt change ships. FastAPI service with an RQ worker
+            queue, Postgres for state.
+            <a href="https://checkmate-ai.fly.dev">checkmate-ai.fly.dev</a> ·
             <a href="https://github.com/charanmogulla0-gith/checkmateai">repo</a>
-          </span>
-        </div>
-        <ul class="bullets">
-          <li>
-            Built a production GitHub App that reviews pull requests with
-            Claude Sonnet 4.6, validates inline diff comments, and uses
-            repo-aware RAG (Qdrant + BGE embeddings) for context.
-          </li>
-          <li>
-            Deployed FastAPI + RQ worker stack on Fly.io with managed Neon
-            Postgres, Upstash Redis, and Qdrant Cloud — clickable demo URL,
-            $0/mo on free tiers.
-          </li>
-          <li>
-            Instrumented end-to-end LLM observability with Langfuse (traces,
-            cost, latency) and a 14-case <em>promptfoo</em> evaluation suite
-            wired into CI.
           </li>
         </ul>
       </div>
 
       <div class="project">
-        <div class="name">AI-Powered Chatbot with LangChain &amp; RAG</div>
+        <div class="name">Domain-Specific LLM Fine-Tuning</div>
         <ul class="bullets">
           <li>
-            Built custom RAG pipelines using FAISS &amp; OpenAI GPT-4 for
-            context-aware chatbot retrieval.
-          </li>
-          <li>
-            Integrated LangChain agents for document search &amp;
-            summarization in customer service chatbots.
-          </li>
-          <li>
-            Developed a FastAPI-based API for chatbot deployment with
-            real-time response generation.
-          </li>
-        </ul>
-      </div>
-
-      <div class="project">
-        <div class="name">LLM Fine-Tuning for Domain-Specific Chatbot</div>
-        <ul class="bullets">
-          <li>
-            Fine-tuned Mistral &amp; LLaMA models using LoRA/QLoRA for
-            enterprise AI assistants.
-          </li>
-          <li>
-            Optimized prompt engineering techniques, improving response
-            relevance by 35%.
-          </li>
-        </ul>
-      </div>
-
-      <div class="project">
-        <div class="name">AI-Powered Search Engine with LLM Summarization</div>
-        <ul class="bullets">
-          <li>
-            Implemented search augmentation with GPT-4 &amp; T5, providing
-            concise AI-generated summaries.
-          </li>
-          <li>
-            Integrated LangChain retrievers &amp; embeddings for improved
-            search relevance.
+            Mistral 7B with QLoRA on a curated instruction dataset I assembled
+            (~8K pairs). Compared the tuned model against the base model on a
+            held-out eval set; tracked exact-match and a small human-rated
+            quality score. Code and write-up on GitHub.
           </li>
         </ul>
       </div>
@@ -360,38 +283,30 @@
         <span class="right">Aug 2023 — May 2025</span>
       </div>
       <div class="sub-row">
-        <span>Master of Science, Computer Science in AI &amp; ML</span>
+        <span>M.S., Computer Science (AI &amp; ML)</span>
         <span>Lee&apos;s Summit, Missouri</span>
       </div>
       <ul class="bullets">
-        <li><strong>GPA:</strong> 3.6/4.0</li>
-        <li>
-          <strong>Coursework:</strong> AI Ethics, Machine Learning, NLP, Deep
-          Learning, Data Analytics
-        </li>
+        <li><strong>GPA:</strong> 3.6 / 4.0</li>
       </ul>
 
       <div class="role-row">
         <span class="left">Bharat Institute of Engineering and Technology</span>
-        <span class="right">2017 — 2021</span>
+        <span class="right">Jun 2017 — Jul 2021</span>
       </div>
       <div class="sub-row">
-        <span>Bachelor of Science, Computer Science, Engineering</span>
-        <span>Hyderabad, India</span>
+        <span>B.Tech, Computer Science</span><span>Hyderabad, India</span>
       </div>
       <ul class="bullets">
-        <li><strong>GPA:</strong> 8.3/10</li>
-        <li>
-          <strong>Coursework:</strong> AI, Computer Vision, Networking,
-          Machine Learning
-        </li>
+        <li><strong>GPA:</strong> 8.3 / 10</li>
       </ul>
 
       <h2 class="section">Certifications</h2>
       <ul class="bullets">
-        <li>LangChain for Developers — LangChain Official (2024)</li>
-        <li>Generative AI with Large Language Models — Coursera (2024)</li>
-        <li>Deep Learning Specialization — Andrew Ng (2023)</li>
+        <li>
+          DeepLearning.AI: Generative AI with LLMs · Deep Learning Specialization
+          · LangChain for LLM Application Development
+        </li>
       </ul>
     </div>
   </body>

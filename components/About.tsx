@@ -33,7 +33,7 @@ export function About() {
               </span>
               <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-muted/40 text-sm">
                 <Sparkles size={14} className="text-accent" />
-                5+ Years in AI/ML
+                3+ Years in Production ML
               </span>
             </div>
           </div>

@@ -13,6 +13,7 @@ export function SectionHeader({
       <h2 className="text-4xl md:text-5xl font-semibold tracking-tight">
         {title}
       </h2>
+      <div className="divider-line" />
     </div>
   );
 }
